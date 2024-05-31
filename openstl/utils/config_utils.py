@@ -72,7 +72,7 @@ class Config:
         if fileExtname not in ['.py']:
             raise IOError('Only py type are supported now!')
 
-        with tempfile.TemporaryDirectory(dir=r'G:\temp dirs\code_temp') as temp_config_dir:
+        with tempfile.TemporaryDirectory() as temp_config_dir:
             temp_config_file = tempfile.NamedTemporaryFile(
                 dir=temp_config_dir, suffix=fileExtname, delete=False)
             temp_config_name = osp.basename(temp_config_file.name)
